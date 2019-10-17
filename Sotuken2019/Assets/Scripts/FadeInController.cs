@@ -8,7 +8,6 @@ public class FadeInController : MonoBehaviour
     float fadeSpeed = 0.03f;     //透明度が変わるスピードを管理
     float red, green, blue, alpha;   //パネルの色、不透明度を管理
     public bool isFadeIn = false;   //フェードイン処理の開始、完了を管理するフラグ
-
     Image fadeImage;                //透明度を変更するパネルのイメージ
 
     // Start is called before the first frame update
@@ -19,11 +18,7 @@ public class FadeInController : MonoBehaviour
         green = fadeImage.color.g;
         blue = fadeImage.color.b;
         alpha = fadeImage.color.a;
-
-        Invoke("StartFadein", 2.0f);
     }
-
-    // Update is called once per frame
     void Update()
     {
         StartFadeIn();
@@ -38,7 +33,6 @@ public class FadeInController : MonoBehaviour
             isFadeIn = false;
             fadeImage.enabled = false;    //d)パネルの表示をオフにする
         }
-        //Debug.Log("実行されました。");
     }
 
     void SetAlpha()

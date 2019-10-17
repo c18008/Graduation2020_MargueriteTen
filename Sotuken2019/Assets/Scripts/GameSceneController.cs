@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour
+public class GameSceneController : MonoBehaviour
 {
     float fadeSpeed = 0.03f;     //透明度が変わるスピードを管理
     float red, green, blue, alpha;   //パネルの色、不透明度を管理
@@ -30,7 +30,7 @@ public class SceneController : MonoBehaviour
     }
     void Update()
     {
-        if(isFadeOut == true)
+        if (isFadeOut == true)
         {
             StartFadeOut();
         }
@@ -42,7 +42,7 @@ public class SceneController : MonoBehaviour
         SetAlpha();               // c)変更した透明度をパネルに反映する
         if (alpha > 1.0f)
         {             // d)完全に不透明になったら処理を抜ける
-            SceneManager.LoadScene("tutorial");
+            SceneManager.LoadScene("battle");
         }
     }
 
